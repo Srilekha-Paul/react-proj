@@ -1,12 +1,12 @@
-function About()
+function Services()
 {
     return(
         <div>
-        <h1>Welcome to About Page</h1>
-          <p>loremmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+        <h1>Welcome to Services Page</h1>
+          <p>loremmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
           </p>
 
         </div>
     )
 }
-export default About;
+export default Services;
