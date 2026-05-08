@@ -1,4 +1,4 @@
-function Galary()
+function Gallary()
 {
     return(
         <div>
@@ -9,4 +9,4 @@ function Galary()
         </div>
     )
 }
-export default Galary;
+export default Gallary;
