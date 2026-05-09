@@ -1,0 +1,120 @@
+/* Header Styles */
+.header-nav {
+  @apply sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100;
+}
+
+.nav-link {
+  @apply relative font-medium transition-all duration-300 hover:text-gold-600;
+}
+
+.nav-link.active {
+  @apply text-gold-600 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gold-600;
+}
+
+/* Hero Section */
+.hero-section {
+  @apply relative min-h-[70vh] md:min-h-screen flex items-center justify-center overflow-hidden;
+}
+
+.hero-overlay {
+  @apply absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10;
+}
+
+.hero-content {
+  @apply relative z-20 text-center text-white max-w-4xl mx-auto px-6;
+}
+
+/* Product Card */
+.product-card {
+  @apply bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-2xl transition-all duration-500;
+}
+
+.product-image {
+  @apply w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700;
+}
+
+.product-badge {
+  @apply absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold shadow-lg;
+}
+
+/* Cart Styles */
+.cart-sidebar {
+  @apply fixed inset-0 z-[9999] flex;
+}
+
+.cart-panel {
+  @apply w-full md:w-96 bg-white shadow-2xl transform translate-x-full transition-transform duration-500 ease-in-out;
+}
+
+.cart-panel.open {
+  @apply translate-x-0;
+}
+
+/* Buttons */
+.btn-add-cart {
+  @apply w-14 h-14 bg-gold-600 hover:bg-gold-700 rounded-2xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110;
+}
+
+.btn-wishlist {
+  @apply w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-110;
+}
+
+/* Form Styles */
+.form-input {
+  @apply w-full px-4 py-4 border border-gray-200 rounded-2xl focus:ring-4 focus:ring-gold-500/20 focus:border-gold-500 transition-all duration-300 bg-white/80 backdrop-blur-sm;
+}
+
+.form-label {
+  @apply block text-sm font-semibold text-gray-700 mb-2;
+}
+
+/* Checkout Styles */
+.checkout-section {
+  @apply bg-gradient-to-br from-gray-50 to-white py-24;
+}
+
+.order-summary {
+  @apply sticky top-24 bg-white/80 backdrop-blur-md rounded-3xl shadow-2xl border border-white/50;
+}
+
+/* Loading Spinner */
+.spinner {
+  @apply w-8 h-8 border-4 border-yellow-200 border-t-gold-600 rounded-full animate-spin;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  @apply fixed inset-0 bg-black/60 backdrop-blur-sm z-[999] flex items-center justify-center p-4;
+}
+
+/* Responsive Images */
+.responsive-img {
+  @apply w-full h-auto max-w-full object-cover;
+}
+
+/* Utility Classes */
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.glow-effect {
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Dark Mode Support (Optional) */
+@media (prefers-color-scheme: dark) {
+  body {
+    @apply bg-gray-900 text-white;
+  }
+  
+  .dark\:bg-white {
+    @apply bg-gray-800;
+  }
+}
