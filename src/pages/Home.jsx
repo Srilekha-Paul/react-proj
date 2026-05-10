@@ -1,18 +1,41 @@
 import Hero from "../components/Hero";
-// import About from "./About";
 import ProductList from "../components/ProductList";
+import About from "./About";
 
 const Home = () => {
   return (
     <>
+      {/* Hero Section */}
       <Hero />
-     
-      <ProductList />
+
+      {/* Products Section */}
+      <section className="py-20 px-6 md:px-16 bg-gray-100">
+        <ProductList />
+      </section>
+
+      {/* About Section */}
+      <About />
     </>
   );
 };
 
 export default Home;
+
+// import Hero from "../components/Hero";
+// // import About from "./About";
+// import ProductList from "../components/ProductList";
+
+// const Home = () => {
+//   return (
+//     <>
+//       <Hero />
+     
+//       <ProductList />
+//     </>
+//   );
+// };
+
+// export default Home;
 // import Hero from "../components/Hero";
 // import About from "./About";
 // import ProductList from "../components/ProductList";
