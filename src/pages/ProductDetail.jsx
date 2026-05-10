@@ -21,7 +21,7 @@ const ProductDetail = () => {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Product not found</h2>
-          <Link to="/shop" className="text-gold-600 hover:underline">Back to shop</Link>
+          <Link to="/shop" className="text-yellow-500 hover:underline">Back to shop</Link>
         </div>
       </div>
     )
@@ -52,7 +52,7 @@ const ProductDetail = () => {
 
           {/* Product Info */}
           <div>
-            <span className="inline-block px-4 py-2 bg-gold-100 text-gold-700 text-sm font-semibold rounded-full mb-4">
+            <span className="inline-block px-4 py-2 bg-yellow-100 text-yellow-700 text-sm font-semibold rounded-full mb-4">
               {product.category}
             </span>
             
@@ -73,7 +73,7 @@ const ProductDetail = () => {
             ) : (
               <button
                 onClick={() => addToCart(product)}
-                className="w-full bg-gold-600 hover:bg-gold-700 text-white py-6 px-8 rounded-2xl text-lg font-semibold flex items-center justify-center space-x-3 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]"
+                className="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-6 px-8 rounded-2xl text-lg font-semibold flex items-center justify-center space-x-3 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]"
               >
                 <ShoppingCart className="w-6 h-6" />
                 <span>Add to Cart</span>

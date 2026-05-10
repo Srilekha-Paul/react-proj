@@ -33,7 +33,7 @@ const Cart = ({ isOpen, onClose }) => {
                 </svg>
               </div>
               <p className="text-lg text-gray-600 mb-4">Your cart is empty</p>
-              <Link to="/shop" className="inline-block bg-gold-600 hover:bg-gold-700 text-white px-8 py-3 rounded-xl font-semibold">
+              <Link to="/shop" className="inline-block bg-yellow-500 hover:bg-yellow-600 text-white px-8 py-3 rounded-xl font-semibold">
                 Start Shopping
               </Link>
             </div>
@@ -55,7 +55,7 @@ const Cart = ({ isOpen, onClose }) => {
             <div className="space-y-3">
               <Link
                 to="/checkout"
-                className="block w-full bg-gold-600 hover:bg-gold-700 text-white text-center py-4 px-6 rounded-xl font-semibold transition-colors"
+                className="block w-full bg-yellow-500 hover:bg-yellow-600 text-white text-center py-4 px-6 rounded-xl font-semibold transition-colors"
               >
                 Proceed to Checkout
               </Link>
@@ -73,4 +73,4 @@ const Cart = ({ isOpen, onClose }) => {
   )
 }
 
-export default Cart
+export default Cart;

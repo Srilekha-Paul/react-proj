@@ -64,7 +64,7 @@ export default ProductList
 //   }, [filter, sortBy, searchTerm])
 
 //   return (
-//     <div className={`container-x ${className}`}>
+//     <div className={`container ${className}`}>
 //       {/* Filters & Search */}
 //       <div className="flex flex-col lg:flex-row gap-6 lg:items-center justify-between mb-12 pb-8 border-b border-gray-200">
 //         {/* Search */}

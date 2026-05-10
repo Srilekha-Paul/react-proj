@@ -26,7 +26,7 @@ const CartPage = () => {
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Your cart is empty</h2>
             <Link 
               to="/shop" 
-              className="inline-flex items-center px-8 py-4 bg-gold-600 hover:bg-gold-700 text-lg font-semibold rounded-2xl text-white transition-all duration-300"
+              className="inline-flex items-center px-8 py-4 bg-yellow-500 hover:bg-yellow-600 text-lg font-semibold rounded-2xl text-white transition-all duration-300"
             >
               Continue Shopping
             </Link>
@@ -55,7 +55,7 @@ const CartPage = () => {
                 </button>
                 <Link
                   to="/checkout"
-                  className="flex-1 bg-gold-600 hover:bg-gold-700 text-white py-4 px-8 rounded-2xl font-semibold text-center transition-all duration-300 hover:shadow-xl flex items-center justify-center"
+                  className="flex-1 bg-yellow-500 hover:bg-yellow-600 text-white py-4 px-8 rounded-2xl font-semibold text-center transition-all duration-300 hover:shadow-xl flex items-center justify-center"
                 >
                   Proceed to Checkout
                 </Link>

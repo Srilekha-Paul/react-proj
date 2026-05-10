@@ -3,7 +3,7 @@ import ProductList from '../components/ProductList.jsx'
 const Shop = () => {
   return (
     <div className="py-24 bg-gray-50 min-h-screen">
-      <div className="container-x">
+      <div className="container">
         <div className="text-center mb-20">
           <h1 className="text-5xl md:text-6xl font-serif font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-6">
             Our Collection
@@ -18,7 +18,7 @@ const Shop = () => {
   )
 }
 
-export default Shop
+export default Shop;
 
 
 // import { useState } from 'react'

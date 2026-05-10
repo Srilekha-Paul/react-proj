@@ -50,7 +50,7 @@ const Checkout = () => {
           <p className="text-xl text-gray-600 mb-8">Thank you for your purchase. Your order confirmation has been sent to your email.</p>
           <Link
             to="/"
-            className="inline-flex items-center px-12 py-4 bg-gold-600 hover:bg-gold-700 text-lg font-semibold rounded-2xl text-white transition-all duration-300"
+            className="inline-flex items-center px-12 py-4 bg-yellow-500 hover:bg-yellow-600 text-lg font-semibold rounded-2xl text-white transition-all duration-300"
           >
             Continue Shopping
           </Link>
@@ -71,7 +71,7 @@ const Checkout = () => {
               {/* Contact Info */}
               <div>
                 <h3 className="text-lg font-semibold mb-4 flex items-center">
-                  <Mail className="w-5 h-5 mr-2 text-gold-600" />
+                  <Mail className="w-5 h-5 mr-2 text-yellow-500" />
                   Contact Information
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -81,7 +81,7 @@ const Checkout = () => {
                     placeholder="First name"
                     value={formData.firstName}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
                     required
                   />
                   <input
@@ -90,7 +90,7 @@ const Checkout = () => {
                     placeholder="Last name"
                     value={formData.lastName}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
                     required
                   />
                 </div>
@@ -100,7 +100,7 @@ const Checkout = () => {
                   placeholder="Email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="w-full mt-4 px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-transparent"
+                  className="w-full mt-4 px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
                   required
                 />
                 <input
@@ -109,14 +109,14 @@ const Checkout = () => {
                   placeholder="Phone"
                   value={formData.phone}
                   onChange={handleInputChange}
-                  className="w-full mt-4 px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-transparent"
+                  className="w-full mt-4 px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
                 />
               </div>
 
               {/* Shipping Info */}
               <div>
                 <h3 className="text-lg font-semibold mb-4 flex items-center">
-                  <MapPin className="w-5 h-5 mr-2 text-gold-600" />
+                  <MapPin className="w-5 h-5 mr-2 text-yellow-500" />
                   Shipping Address
                 </h3>
                 <input
@@ -125,7 +125,7 @@ const Checkout = () => {
                   placeholder="Street address"
                   value={formData.address}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
                   required
                 />
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
@@ -135,7 +135,7 @@ const Checkout = () => {
                     placeholder="City"
                     value={formData.city}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
                     required
                   />
                   <input
@@ -144,7 +144,7 @@ const Checkout = () => {
                     placeholder="ZIP Code"
                     value={formData.zipCode}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
                     required
                   />
                   <input
@@ -153,7 +153,7 @@ const Checkout = () => {
                     placeholder="Country"
                     value={formData.country}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
                     required
                   />
                 </div>
@@ -162,7 +162,7 @@ const Checkout = () => {
               {/* Payment Info */}
               <div>
                 <h3 className="text-lg font-semibold mb-4 flex items-center">
-                  <CreditCard className="w-5 h-5 mr-2 text-gold-600" />
+                  <CreditCard className="w-5 h-5 mr-2 text-yellow-500" />
                   Payment
                 </h3>
                 <div className="space-y-4">
@@ -172,7 +172,7 @@ const Checkout = () => {
                     placeholder="Card number"
                     value={formData.cardNumber}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
                     required
                   />
                   <div className="grid grid-cols-2 gap-4">
@@ -182,7 +182,7 @@ const Checkout = () => {
                       placeholder="MM/YY"
                       value={formData.expiry}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
                       required
                     />
                     <input
@@ -191,7 +191,7 @@ const Checkout = () => {
                       placeholder="CVV"
                       value={formData.cvv}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
                       required
                     />
                   </div>
@@ -200,7 +200,7 @@ const Checkout = () => {
 
               <button
                 type="submit"
-                className="w-full bg-gold-600 hover:bg-gold-700 text-white py-6 px-8 rounded-2xl text-xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center space-x-3"
+                className="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-6 px-8 rounded-2xl text-xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center space-x-3"
               >
                 <Truck className="w-6 h-6" />
                 <span>Place Order - ${totalPrice.toFixed(2)}</span>

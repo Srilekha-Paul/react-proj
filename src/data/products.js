@@ -40,7 +40,7 @@ export const products = [
     name: "Sapphire Pendant",
     price: 350,
     image: "/src/assets/images/product5.jpg",  // ✅ Local path
-    category: "Necklaces",
+    category: " Pendant",
     description: "Ceylon sapphire center stone",
     inStock: false
   },
