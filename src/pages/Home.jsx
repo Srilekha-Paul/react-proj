@@ -1,8 +1,14 @@
+import Hero from "../components/Hero";
+import About from "./About";
+import ProductList from "../components/ProductList";
+
 const Home = () => {
   return (
-    <div style={{ padding: "50px", fontSize: "40px" }}>
-      Home Page Working
-    </div>
+    <>
+      <Hero />
+      <About />
+      <ProductList />
+    </>
   );
 };
 
