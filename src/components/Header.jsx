@@ -1,5 +1,7 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
+import logo from "../assets/images/logo.jpg";
+
 const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -42,10 +44,25 @@ const Header = () => {
 
       <div className="max-w-7xl mx-auto flex items-center justify-between">
 
-        {/* Logo */}
+        {/* Logo
         <h1 className="text-3xl font-bold">
           Luxury Jewelry
-        </h1>
+        </h1> */}
+
+        {/* Logo + Brand */}
+        <Link to="/" className="flex items-center gap-4">
+
+          <img
+            src={logo}
+            alt="Luxury Jewelry Logo"
+            className="w-14 h-14 object-contain"
+          />
+
+          <h1 className="text-3xl font-bold tracking-wide">
+            Luxury Jewelry
+          </h1>
+
+        </Link>
 
         {/* Navigation */}
         <nav className="flex items-center gap-8 text-lg font-medium">
