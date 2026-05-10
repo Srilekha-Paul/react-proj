@@ -1,18 +1,46 @@
+import { Routes, Route } from "react-router-dom";
+
 import Header from "./components/Header";
-import Home from "./pages/Home";
 import Footer from "./components/Footer";
+
+import Home from "./pages/Home";
+// import About from "./pages/About";
+import Shop from "./pages/Shop";
+import CartPage from "./pages/CartPage";
 
 function App() {
   return (
     <>
       <Header />
-      <Home />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/shop" element={<Shop />} />
+        <Route path="/cart" element={<CartPage />} />
+        {/* <Route path="/about" element={<About />} />  */}
+      </Routes>
+
       <Footer />
     </>
   );
 }
 
 export default App;
+// import Header from "./components/Header";
+// import Home from "./pages/Home";
+// import Footer from "./components/Footer";
+
+// function App() {
+//   return (
+//     <>
+//       <Header />
+//       <Home />
+//       <Footer />
+//     </>
+//   );
+// }
+
+// export default App;
 
 
 // import { Routes, Route } from "react-router-dom";
