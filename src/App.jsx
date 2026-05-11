@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 import Home from "./pages/Home";
-// import About from "./pages/About";
+import About from "./pages/About";
 import Shop from "./pages/Shop";
 import CartPage from "./pages/CartPage";
 
@@ -17,7 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/cart" element={<CartPage />} />
-        {/* <Route path="/about" element={<About />} />  */}
+        <Route path="/about" element={<About />} /> 
       </Routes>
 
       <Footer />
