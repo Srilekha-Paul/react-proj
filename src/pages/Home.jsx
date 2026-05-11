@@ -1,6 +1,8 @@
 import Hero from "../components/Hero";
 import ProductList from "../components/ProductList";
 import About from "./About";
+import Reviews from "../components/Reviews";
+import FAQ from "../components/FAQ";
 
 const Home = () => {
   return (
@@ -15,6 +17,11 @@ const Home = () => {
 
       {/* About Section */}
       <About />
+
+      {/* Reviews Section */}
+      <Reviews />
+      {/* FAQ Section */}
+      <FAQ />
     </>
   );
 };

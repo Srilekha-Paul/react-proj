@@ -1,257 +1,319 @@
-import { useState } from 'react'
-import { useCart } from '../context/CartContext.jsx'
-import { Link, useNavigate } from 'react-router-dom'
-import { CreditCard, MapPin, Phone, Mail, Truck } from 'lucide-react'
+import { useState } from "react";
+import { useCart } from "../context/CartContext.jsx";
+import { Link, useNavigate } from "react-router-dom";
+import {
+  CreditCard,
+  MapPin,
+  Mail,
+  Truck,
+} from "lucide-react";
 
 const Checkout = () => {
-  const { cart, totalPrice, clearCart } = useCart()
-  const navigate = useNavigate()
+  const { cart, totalPrice, clearCart } = useCart();
+
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    address: '',
-    city: '',
-    zipCode: '',
-    country: '',
-    cardNumber: '',
-    expiry: '',
-    cvv: ''
-  })
-  const [orderPlaced, setOrderPlaced] = useState(false)
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    address: "",
+    city: "",
+    zipCode: "",
+    country: "",
+    cardNumber: "",
+    expiry: "",
+    cvv: "",
+  });
 
+  const [loading, setLoading] = useState(false);
+
+  // Handle Form Submit
   const handleSubmit = (e) => {
-    e.preventDefault()
-    // Simulate order processing
-    setTimeout(() => {
-      clearCart()
-      setOrderPlaced(true)
-    }, 2000)
-  }
+    e.preventDefault();
 
+    setLoading(true);
+
+    // Simulate payment processing
+    setTimeout(() => {
+      clearCart();
+
+      navigate("/success");
+    }, 2000);
+  };
+
+  // Handle Input Change
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
-    })
-  }
-
-  if (orderPlaced) {
-    return (
-      <section className="min-h-screen py-24 flex items-center justify-center">
-        <div className="max-w-md w-full mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="w-32 h-32 bg-green-100 rounded-3xl mx-auto mb-8 flex items-center justify-center">
-            <svg className="w-20 h-20 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-            </svg>
-          </div>
-          <h1 className="text-4xl font-serif font-bold text-gray-900 mb-4">Order Placed!</h1>
-          <p className="text-xl text-gray-600 mb-8">Thank you for your purchase. Your order confirmation has been sent to your email.</p>
-          <Link
-            to="/"
-            className="inline-flex items-center px-12 py-4 bg-yellow-500 hover:bg-yellow-600 text-lg font-semibold rounded-2xl text-white transition-all duration-300"
-          >
-            Continue Shopping
-          </Link>
-        </div>
-      </section>
-    )
-  }
+      [e.target.name]: e.target.value,
+    });
+  };
 
   return (
-    <section className="py-24">
+    <section className="min-h-screen bg-[#f8f5f0] py-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div className="text-center mb-16">
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
+            Checkout
+          </h1>
+
+          <p className="text-gray-600 text-lg">
+            Complete your luxury jewelry purchase
+          </p>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Checkout Form */}
-          <div className="lg:max-w-lg">
-            <h1 className="text-3xl font-serif font-bold text-gray-900 mb-8">Checkout</h1>
-            
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Contact Info */}
+
+          {/* LEFT SIDE */}
+          <div className="bg-white rounded-3xl shadow-xl p-8">
+
+            <form onSubmit={handleSubmit} className="space-y-8">
+
+              {/* Contact Information */}
               <div>
-                <h3 className="text-lg font-semibold mb-4 flex items-center">
-                  <Mail className="w-5 h-5 mr-2 text-yellow-500" />
+                <h3 className="text-2xl font-semibold mb-6 flex items-center">
+                  <Mail className="w-6 h-6 mr-3 text-yellow-500" />
                   Contact Information
                 </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                <div className="grid md:grid-cols-2 gap-4">
                   <input
                     type="text"
                     name="firstName"
-                    placeholder="First name"
+                    placeholder="First Name"
                     value={formData.firstName}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
                     required
+                    className="w-full border border-gray-300 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-yellow-500"
                   />
+
                   <input
                     type="text"
                     name="lastName"
-                    placeholder="Last name"
+                    placeholder="Last Name"
                     value={formData.lastName}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
                     required
+                    className="w-full border border-gray-300 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-yellow-500"
                   />
                 </div>
+
                 <input
                   type="email"
                   name="email"
-                  placeholder="Email"
+                  placeholder="Email Address"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="w-full mt-4 px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
                   required
+                  className="w-full mt-4 border border-gray-300 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-yellow-500"
                 />
+
                 <input
-                  type="tel"
+                  type="text"
                   name="phone"
-                  placeholder="Phone"
+                  placeholder="Phone Number"
                   value={formData.phone}
                   onChange={handleInputChange}
-                  className="w-full mt-4 px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+                  required
+                  className="w-full mt-4 border border-gray-300 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-yellow-500"
                 />
               </div>
 
-              {/* Shipping Info */}
+              {/* Shipping Address */}
               <div>
-                <h3 className="text-lg font-semibold mb-4 flex items-center">
-                  <MapPin className="w-5 h-5 mr-2 text-yellow-500" />
+                <h3 className="text-2xl font-semibold mb-6 flex items-center">
+                  <MapPin className="w-6 h-6 mr-3 text-yellow-500" />
                   Shipping Address
                 </h3>
+
                 <input
                   type="text"
                   name="address"
-                  placeholder="Street address"
+                  placeholder="Street Address"
                   value={formData.address}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
                   required
+                  className="w-full border border-gray-300 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-yellow-500"
                 />
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+
+                <div className="grid md:grid-cols-3 gap-4 mt-4">
+
                   <input
                     type="text"
                     name="city"
                     placeholder="City"
                     value={formData.city}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
                     required
+                    className="w-full border border-gray-300 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-yellow-500"
                   />
+
                   <input
                     type="text"
                     name="zipCode"
                     placeholder="ZIP Code"
                     value={formData.zipCode}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
                     required
+                    className="w-full border border-gray-300 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-yellow-500"
                   />
+
                   <input
                     type="text"
                     name="country"
                     placeholder="Country"
                     value={formData.country}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
                     required
+                    className="w-full border border-gray-300 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-yellow-500"
                   />
+
                 </div>
               </div>
 
-              {/* Payment Info */}
+              {/* Payment */}
               <div>
-                <h3 className="text-lg font-semibold mb-4 flex items-center">
-                  <CreditCard className="w-5 h-5 mr-2 text-yellow-500" />
-                  Payment
+                <h3 className="text-2xl font-semibold mb-6 flex items-center">
+                  <CreditCard className="w-6 h-6 mr-3 text-yellow-500" />
+                  Payment Details
                 </h3>
-                <div className="space-y-4">
+
+                <input
+                  type="text"
+                  name="cardNumber"
+                  placeholder="Card Number"
+                  value={formData.cardNumber}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full border border-gray-300 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                />
+
+                <div className="grid grid-cols-2 gap-4 mt-4">
+
                   <input
                     type="text"
-                    name="cardNumber"
-                    placeholder="Card number"
-                    value={formData.cardNumber}
+                    name="expiry"
+                    placeholder="MM/YY"
+                    value={formData.expiry}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
                     required
+                    className="w-full border border-gray-300 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-yellow-500"
                   />
-                  <div className="grid grid-cols-2 gap-4">
-                    <input
-                      type="text"
-                      name="expiry"
-                      placeholder="MM/YY"
-                      value={formData.expiry}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
-                      required
-                    />
-                    <input
-                      type="text"
-                      name="cvv"
-                      placeholder="CVV"
-                      value={formData.cvv}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
-                      required
-                    />
-                  </div>
+
+                  <input
+                    type="text"
+                    name="cvv"
+                    placeholder="CVV"
+                    value={formData.cvv}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full border border-gray-300 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                  />
+
                 </div>
               </div>
 
+              {/* Button */}
               <button
                 type="submit"
-                className="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-6 px-8 rounded-2xl text-xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center space-x-3"
+                disabled={loading}
+                className="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-5 rounded-2xl text-xl font-semibold transition-all duration-300 flex items-center justify-center gap-3"
               >
                 <Truck className="w-6 h-6" />
-                <span>Place Order - ${totalPrice.toFixed(2)}</span>
+
+                {loading
+                  ? "Processing Order..."
+                  : `Place Order - $${totalPrice.toFixed(2)}`}
               </button>
+
             </form>
           </div>
 
-          {/* Order Summary */}
+          {/* RIGHT SIDE */}
           <div className="space-y-6">
-            <div className="bg-white rounded-3xl shadow-2xl p-8 sticky top-24">
-              <h3 className="text-2xl font-serif font-bold text-gray-900 mb-6">Order Summary</h3>
-              
-              <div className="space-y-4 mb-8">
-                {cart.map(item => (
-                  <div key={item.id} className="flex items-center justify-between py-2">
-                    <div className="flex items-center space-x-3">
-                      <img src={item.image} alt={item.name} className="w-12 h-12 object-cover rounded-xl" />
+
+            <div className="bg-white rounded-3xl shadow-xl p-8 sticky top-24">
+
+              <h2 className="text-3xl font-bold mb-8">
+                Order Summary
+              </h2>
+
+              <div className="space-y-5">
+
+                {cart.map((item) => (
+                  <div
+                    key={item.id}
+                    className="flex items-center justify-between border-b pb-4"
+                  >
+                    <div className="flex items-center gap-4">
+
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="w-20 h-20 object-cover rounded-2xl"
+                      />
+
                       <div>
-                        <p className="font-semibold text-gray-900">{item.name}</p>
-                        <p className="text-sm text-gray-500">Qty: {item.quantity}</p>
+                        <h3 className="font-semibold text-lg">
+                          {item.name}
+                        </h3>
+
+                        <p className="text-gray-500">
+                          Qty: {item.quantity}
+                        </p>
                       </div>
+
                     </div>
-                    <span className="font-bold">${(item.price * item.quantity).toFixed(2)}</span>
+
+                    <p className="font-bold text-lg">
+                      ${(item.price * item.quantity).toFixed(2)}
+                    </p>
                   </div>
                 ))}
+
               </div>
 
-              <div className="space-y-4 border-t pt-6">
-                <div className="flex justify-between text-lg font-semibold">
-                  <span>Total</span>
+              {/* Total */}
+              <div className="mt-8 border-t pt-6">
+
+                <div className="flex justify-between mb-4 text-lg">
+                  <span>Subtotal</span>
+
                   <span>${totalPrice.toFixed(2)}</span>
                 </div>
-                <div className="text-sm text-gray-600 space-y-1">
-                  <p>• Free shipping</p>
-                  <p>• Taxes calculated at checkout</p>
-                  <p>• Secure payment processing</p>
+
+                <div className="flex justify-between mb-4 text-lg">
+                  <span>Shipping</span>
+
+                  <span>Free</span>
                 </div>
+
+                <div className="flex justify-between text-3xl font-bold mt-6">
+                  <span>Total</span>
+
+                  <span>${totalPrice.toFixed(2)}</span>
+                </div>
+
               </div>
             </div>
 
+            {/* Return Button */}
             <Link
               to="/cart"
-              className="block w-full bg-gray-900 hover:bg-gray-800 text-white py-4 px-8 rounded-2xl font-semibold text-center transition-colors"
+              className="block w-full bg-black hover:bg-gray-800 text-white py-4 rounded-2xl text-center font-semibold transition"
             >
               ← Return to Cart
             </Link>
+
           </div>
+
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default Checkout;

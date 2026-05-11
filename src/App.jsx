@@ -7,6 +7,8 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Shop from "./pages/Shop";
 import CartPage from "./pages/CartPage";
+import Checkout from "./pages/Checkout";
+import OrderSuccess from "./pages/OrderSuccess";
 
 function App() {
   return (
@@ -18,6 +20,9 @@ function App() {
         <Route path="/shop" element={<Shop />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/about" element={<About />} /> 
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/order-success" element={<OrderSuccess />} />
+
       </Routes>
 
       <Footer />
@@ -26,6 +31,9 @@ function App() {
 }
 
 export default App;
+
+
+
 // import Header from "./components/Header";
 // import Home from "./pages/Home";
 // import Footer from "./components/Footer";
