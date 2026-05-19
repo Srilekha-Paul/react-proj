@@ -1,26 +1,27 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
-
 import App from "./App";
 import "./styles/globals.css";
-
+import { Provider } from "react-redux";
+import {store} from "./store";
 import { CartProvider } from "./context/CartContext";
-
+import { Toaster } from "sonner";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-
     <BrowserRouter>
-
-      <CartProvider>
-        <App />
-      </CartProvider>
-
+      <Provider store={store}>
+        <CartProvider>
+          <Toaster
+          position="top-right"
+          richColors
+        />
+          <App />
+        </CartProvider>
+      </Provider>
     </BrowserRouter>
-
-  </React.StrictMode>
+  </React.StrictMode>,
 );
-
 
 // import React from "react";
 // import ReactDOM from "react-dom/client";

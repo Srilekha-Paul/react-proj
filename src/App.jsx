@@ -1,14 +1,19 @@
 import { Routes, Route } from "react-router-dom";
-
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Shop from "./pages/Shop";
 import CartPage from "./pages/CartPage";
 import Checkout from "./pages/Checkout";
 import OrderSuccess from "./pages/OrderSuccess";
+import Login from "./pages/auth/Login";
+import Register from "./pages/auth/Register";
+import VerifyOtp from "./pages/auth/VerifyOtp";
+import ProtectedRoute from "./routes/ProtectedRoute";
+import PublicRoute from "./routes/PublicRoute";
+import AdminRoute from "./routes/AdminRoute";
+import AdminDashboard from "./pages/admin/AdminDashboard";
 
 function App() {
   return (
@@ -16,14 +21,78 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/cart" element={<CartPage />} />
-        <Route path="/about" element={<About />} /> 
-        <Route path="/checkout" element={<Checkout />} />
-        <Route path="/order-success" element={<OrderSuccess />} />
+        {/* PUBLIC ROUTES */}
 
+        <Route path="/" element={<Home />} />
+
+        <Route path="/shop" element={<Shop />} />
+
+        <Route path="/about" element={<About />} />
+
+        <Route path="/cart" element={<CartPage />} />
+
+        {/* PUBLIC ONLY */}
+
+        <Route
+          path="/login"
+          element={
+            <PublicRoute>
+              <Login />
+            </PublicRoute>
+          }
+        />
+        <Route
+          path="/register"
+          element={
+            <PublicRoute>
+              <Register />
+            </PublicRoute>
+          }
+        />
+        <Route
+          path="/verify-otp"
+          element={
+            <PublicRoute>
+              <VerifyOtp />
+            </PublicRoute>
+          }
+        />
+
+        {/* PROTECTED */}
+
+        <Route
+          path="/checkout"
+          element={
+            <ProtectedRoute>
+              <Checkout />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/order-success"
+          element={
+            <ProtectedRoute>
+              <OrderSuccess />
+            </ProtectedRoute>
+          }
+        />
+
+
+         {
+        /* Admin Routes can be added here with another layer of protection */
+        <Route
+          path="/admin"
+          element={
+            <AdminRoute>
+              <AdminDashboard />
+            </AdminRoute>
+          }
+        />
+      }
       </Routes>
+
+     
 
       <Footer />
     </>
@@ -31,8 +100,6 @@ function App() {
 }
 
 export default App;
-
-
 
 // import Header from "./components/Header";
 // import Home from "./pages/Home";
@@ -49,7 +116,6 @@ export default App;
 // }
 
 // export default App;
-
 
 // import { Routes, Route } from "react-router-dom";
 
@@ -143,7 +209,6 @@ export default App;
 
 // export default App;
 
-
 // import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // import Header from "./components/Header";
@@ -184,18 +249,6 @@ export default App;
 
 // export default App;
 
-
-
-
-
-
-
-
-
-
-
-
-
 // import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // import Header from "./components/Header";
@@ -208,10 +261,9 @@ export default App;
 // function Home() {
 //   return (
 //     <>
-//       <Home/> 
+//       <Home/>
 
 //       <Hero />
-     
 
 //       {/* About Section on Home Page */}
 //       <About />
@@ -225,7 +277,7 @@ export default App;
 // function App() {
 //   return (
 //     <BrowserRouter>
-      
+
 //       <Header />
 
 //       <Routes>
@@ -233,11 +285,7 @@ export default App;
 //         {/* Home Page */}
 //         <Route path="/" element={<Home />} />
 
-     
-//          <Route path="/" element={<Hero />} />   
-      
-
-
+//          <Route path="/" element={<Hero />} />
 
 //         {/* Separate About Page */}
 //         <Route path="/about" element={<About />} />
@@ -252,15 +300,12 @@ export default App;
 
 // export default App;
 
-
-
-
 // import { Routes, Route } from 'react-router-dom'
 // import { CartProvider } from './context/CartContext.jsx'
 // import Header from './components/Header.jsx'
 // import Footer from './components/Footer.jsx'
 // import Home from './pages/Home.jsx'
-// import Shop from './pages/Shop.jsx' 
+// import Shop from './pages/Shop.jsx'
 // // import About from "./components/About";
 // import About from "./pages/About";
 
@@ -272,9 +317,9 @@ export default App;
 //         <main className="flex-1">
 //           <Routes>
 //             <Route path="/" element={<Home />} />
-//             <Route path="/shop" element={<Shop />} />  
-//             <Route path="/about" element={<About />} />  
-      
+//             <Route path="/shop" element={<Shop />} />
+//             <Route path="/about" element={<About />} />
+
 //           </Routes>
 //         </main>
 //         <Footer />
@@ -316,4 +361,3 @@ export default App;
 // }
 
 // export default App
-

@@ -1,24 +1,24 @@
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../firebase/firebase";
+// import { collection, getDocs } from "firebase/firestore";
+// import { db } from "../firebase/firebase";
 
-export const getProducts = async () => {
-  try {
-    const querySnapshot = await getDocs(
-      collection(db, "products")
-    );
+// export const getProducts = async () => {
+//   try {
+//     const querySnapshot = await getDocs(
+//       collection(db, "products")
+//     );
 
-    const products = [];
+//     const products = [];
 
-    querySnapshot.forEach((doc) => {
-      products.push({
-        id: doc.id,
-        ...doc.data(),
-      });
-    });
+//     querySnapshot.forEach((doc) => {
+//       products.push({
+//         id: doc.id,
+//         ...doc.data(),
+//       });
+//     });
 
-    return products;
-  } catch (error) {
-    console.log(error);
-    return [];
-  }
-};
+//     return products;
+//   } catch (error) {
+//     console.log(error);
+//     return [];
+//   }
+// };
