@@ -1,38 +1,43 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Shop from "./pages/Shop";
 import CartPage from "./pages/CartPage";
 import Checkout from "./pages/Checkout";
 import OrderSuccess from "./pages/OrderSuccess";
+
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 import VerifyOtp from "./pages/auth/VerifyOtp";
+
 import ProtectedRoute from "./routes/ProtectedRoute";
 import PublicRoute from "./routes/PublicRoute";
 import AdminRoute from "./routes/AdminRoute";
-import AdminDashboard from "./pages/admin/AdminDashboard";
+
+import AdminDashboard from "./pages/admin/dashboard/AdminDashboard";
 
 function App() {
+  const location = useLocation();
+
+  // Hide header/footer on admin routes
+  const isAdminRoute = location.pathname.startsWith("/admin");
+
   return (
     <>
-      <Header />
+      {!isAdminRoute && <Header />}
 
       <Routes>
         {/* PUBLIC ROUTES */}
-
         <Route path="/" element={<Home />} />
-
         <Route path="/shop" element={<Shop />} />
-
         <Route path="/about" element={<About />} />
-
         <Route path="/cart" element={<CartPage />} />
 
         {/* PUBLIC ONLY */}
-
         <Route
           path="/login"
           element={
@@ -41,6 +46,7 @@ function App() {
             </PublicRoute>
           }
         />
+
         <Route
           path="/register"
           element={
@@ -49,6 +55,7 @@ function App() {
             </PublicRoute>
           }
         />
+
         <Route
           path="/verify-otp"
           element={
@@ -59,7 +66,6 @@ function App() {
         />
 
         {/* PROTECTED */}
-
         <Route
           path="/checkout"
           element={
@@ -78,9 +84,7 @@ function App() {
           }
         />
 
-
-         {
-        /* Admin Routes can be added here with another layer of protection */
+        {/* ADMIN */}
         <Route
           path="/admin"
           element={
@@ -89,12 +93,9 @@ function App() {
             </AdminRoute>
           }
         />
-      }
       </Routes>
 
-     
-
-      <Footer />
+      {!isAdminRoute && <Footer />}
     </>
   );
 }
