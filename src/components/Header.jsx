@@ -7,12 +7,11 @@ import { logout } from "../store/slice/authSlice.js";
 import { useState, useRef, useEffect } from "react";
 
 const Header = () => {
-  const { cart } = useCart();
+  const { totalItems } = useCart();
   const dispatch = useDispatch();
   const { isAuthenticated, user } = useSelector((state) => state.auth);
   const [openDropdown, setOpenDropdown] = useState(false);
   const dropdownRef = useRef(null);
-  const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
 
   const handleLogout = () => {
     dispatch(logout());
