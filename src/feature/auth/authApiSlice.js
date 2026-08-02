@@ -14,7 +14,6 @@ export const authApiSlice = apiSlice.injectEndpoints({
       async onQueryStarted(arg, { dispatch, queryFulfilled }) {
         try {
           const { data } = await queryFulfilled;
-
           const responseData = data?.data;
 
           dispatch(
@@ -25,7 +24,7 @@ export const authApiSlice = apiSlice.injectEndpoints({
               name: responseData.name,
               role: responseData.role,
               email_verified: responseData.email_verified,
-            }),
+            })
           );
         } catch (error) {
           console.log(error);
@@ -44,20 +43,18 @@ export const authApiSlice = apiSlice.injectEndpoints({
       async onQueryStarted(arg, { dispatch, queryFulfilled }) {
         try {
           const { data } = await queryFulfilled;
-
           const responseData = data?.data;
 
           dispatch(
             setCredentials({
               access_token: responseData.access_token,
               refresh_token: responseData.refresh_token,
-
               id: responseData.id,
               name: responseData.name,
               email: responseData.email,
               role: responseData.role,
               email_verified: responseData.email_verified,
-            }),
+            })
           );
         } catch (error) {
           console.log(error);
@@ -84,10 +81,19 @@ export const authApiSlice = apiSlice.injectEndpoints({
       }),
     }),
 
-    // RESET PASSWORD
-    resetPassword: builder.mutation({
+    // FORGOT PASSWORD OTP
+    sendForgotOtp: builder.mutation({
       query: (data) => ({
-        url: "/otp/reset-password",
+        url: "/auth/forgot-password",
+        method: "POST",
+        body: data,
+      }),
+    }),
+
+    // RESET PASSWORD SUBMIT
+    resetPasswordSubmit: builder.mutation({
+      query: (data) => ({
+        url: "/auth/reset-password",
         method: "POST",
         body: data,
       }),
@@ -100,5 +106,6 @@ export const {
   useLoginMutation,
   useVerifyOtpMutation,
   useResendOtpMutation,
-  useResetPasswordMutation,
+  useSendForgotOtpMutation,
+  useResetPasswordSubmitMutation,
 } = authApiSlice;
