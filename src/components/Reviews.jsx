@@ -31,54 +31,56 @@ const reviews = [
 
 const Reviews = () => {
   return (
-    <section className="bg-[#f8f5f0] py-24 px-6">
+    <section className="bg-[#f8f5f0] py-12 sm:py-24 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
 
-        <div className="text-center mb-16">
-          <p className="text-yellow-600 uppercase tracking-[4px] font-semibold mb-4">
+        <div className="text-center mb-10 sm:mb-16">
+          <p className="text-yellow-600 uppercase tracking-[4px] font-semibold mb-2 sm:mb-4 text-xs sm:text-sm">
             Reviews
           </p>
 
-          <h2 className="text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl sm:text-5xl font-bold text-gray-900 mb-4 font-serif">
             What Our Customers Say
           </h2>
 
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+          <p className="text-gray-600 max-w-2xl mx-auto text-base sm:text-lg">
             Thousands of happy customers trust Luxury Jewels for timeless,
             elegant, and premium jewelry collections.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
 
           {reviews.map((item) => (
             <div
               key={item.id}
-              className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
+              className="bg-white p-6 sm:p-8 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col justify-between"
             >
-              <div className="flex mb-5">
-                {[...Array(item.rating)].map((_, i) => (
-                  <span key={i} className="text-yellow-500 text-2xl">
-                    ★
-                  </span>
-                ))}
+              <div>
+                <div className="flex mb-4">
+                  {[...Array(item.rating)].map((_, i) => (
+                    <span key={i} className="text-yellow-500 text-xl sm:text-2xl">
+                      ★
+                    </span>
+                  ))}
+                </div>
+
+                <p className="text-gray-600 leading-relaxed mb-6 text-sm sm:text-base italic">
+                  "{item.review}"
+                </p>
               </div>
 
-              <p className="text-gray-600 leading-8 mb-6">
-                "{item.review}"
-              </p>
-
-              <div className="flex items-center gap-4">
-                <div className="w-14 h-14 rounded-full bg-yellow-500 flex items-center justify-center text-white text-xl font-bold">
+              <div className="flex items-center gap-3 sm:gap-4 pt-4 border-t border-gray-100">
+                <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-yellow-500 flex items-center justify-center text-white text-lg sm:text-xl font-bold shadow">
                   {item.name.charAt(0)}
                 </div>
 
                 <div>
-                  <h4 className="font-bold text-lg text-gray-900">
+                  <h4 className="font-bold text-base sm:text-lg text-gray-900">
                     {item.name}
                   </h4>
 
-                  <p className="text-gray-500 text-sm">
+                  <p className="text-gray-500 text-xs sm:text-sm">
                     Verified Customer
                   </p>
                 </div>
@@ -92,4 +94,4 @@ const Reviews = () => {
   );
 };
 
-export default Reviews;
+export default Reviews;

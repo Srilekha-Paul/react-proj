@@ -72,19 +72,20 @@ const VerifyOtp = () => {
 
       <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
 
-      <div className="relative z-10 w-full max-w-md bg-white/10 backdrop-blur-2xl border border-white/20 rounded-3xl p-10 shadow-2xl">
+      <div className="relative z-10 w-full max-w-md bg-white/10 backdrop-blur-2xl border border-white/20 rounded-3xl p-6 sm:p-10 shadow-2xl mx-4 my-8">
 
-        <div className="text-center mb-10">
+        <div className="text-center mb-6 sm:mb-10">
 
-          <h1 className="text-5xl font-serif font-bold text-white mb-3">
+          <h1 className="text-3xl sm:text-5xl font-serif font-bold text-white mb-2 sm:mb-3">
             Verify OTP
           </h1>
 
-          <p className="text-white/70">
+          <p className="text-white/70 text-sm sm:text-base">
             Enter the verification code sent to your email
           </p>
 
         </div>
+
 
         <form
           onSubmit={handleSubmit}

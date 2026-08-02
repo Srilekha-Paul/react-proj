@@ -11,9 +11,10 @@ const Home = () => {
       <Hero />
 
       {/* Products Section */}
-      <section className="py-20 px-6 md:px-16 bg-gray-100">
+      <section className="py-10 sm:py-20 px-4 sm:px-6 md:px-16 bg-gray-100">
         <ProductList />
       </section>
+
 
       {/* About Section */}
       <About />

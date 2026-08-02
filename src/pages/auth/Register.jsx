@@ -125,19 +125,20 @@ const Register = () => {
 
       <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
 
-      <div className="relative z-10 w-full max-w-lg bg-white/10 backdrop-blur-2xl border border-white/20 rounded-3xl p-10 shadow-2xl">
+      <div className="relative z-10 w-full max-w-lg bg-white/10 backdrop-blur-2xl border border-white/20 rounded-3xl p-6 sm:p-10 shadow-2xl mx-4 my-8">
 
-        <div className="text-center mb-8">
+        <div className="text-center mb-6 sm:mb-8">
 
-          <h1 className="text-5xl font-serif font-bold text-white mb-3">
+          <h1 className="text-3xl sm:text-5xl font-serif font-bold text-white mb-2 sm:mb-3">
             Create Account
           </h1>
 
-          <p className="text-white/70">
+          <p className="text-white/70 text-sm sm:text-base">
             Join the world of timeless luxury
           </p>
 
         </div>
+
 
         <form
           onSubmit={handleSubmit}

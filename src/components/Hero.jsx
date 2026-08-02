@@ -3,37 +3,37 @@ import heroBg from "../assets/images/hero-bg.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gray-900">
+    <section className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center overflow-hidden bg-gray-900 py-16 sm:py-24">
 
       {/* Background Image */}
       <div
-        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat bg-fixed opacity-90"
+        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat opacity-90"
         style={{
           backgroundImage: `url(${heroBg})`,
         }}
       />
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/80 z-10" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/80 z-10" />
 
       {/* Hero Content */}
-      <div className="container mx-auto text-center relative z-20 px-6 md:px-12">
+      <div className="container mx-auto text-center relative z-20 px-4 sm:px-6 md:px-12">
 
-        <div className="max-w-6xl mx-auto py-20">
+        <div className="max-w-5xl mx-auto py-8 sm:py-16">
 
           {/* Heading */}
-          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-black text-white mb-8 leading-none drop-shadow-2xl">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-black text-white mb-4 sm:mb-8 leading-none drop-shadow-2xl">
 
             <span>Luxury</span>
 
-            <span className="block text-yellow-400 text-5xl sm:text-7xl md:text-8xl lg:text-9xl">
+            <span className="block text-yellow-400 text-4xl sm:text-6xl md:text-8xl lg:text-9xl mt-1 sm:mt-2">
               Jewels
             </span>
 
           </h1>
 
           {/* Subtitle */}
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/95 mb-12 max-w-3xl mx-auto leading-relaxed drop-shadow-lg">
+          <p className="text-base sm:text-xl md:text-2xl lg:text-3xl text-white/95 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed drop-shadow-lg px-2">
 
             Timeless elegance handcrafted for the modern woman.
             Exquisite jewelry that tells your story.
@@ -41,17 +41,17 @@ const Hero = () => {
           </p>
 
           {/* Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-20">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-12 sm:mb-20">
 
             {/* Shop Button */}
             <Link
               to="/shop"
-              className="group relative inline-flex items-center gap-3 text-lg px-12 py-5 bg-white/10 backdrop-blur-xl hover:bg-white/20 border-2 border-white/30 rounded-3xl font-bold text-white shadow-2xl hover:shadow-white/20 transition-all duration-500 hover:scale-105 hover:-translate-y-1"
+              className="group relative inline-flex items-center justify-center gap-3 text-base sm:text-lg px-8 sm:px-12 py-4 sm:py-5 bg-white/10 backdrop-blur-xl hover:bg-white/20 border-2 border-white/30 rounded-3xl font-bold text-white shadow-2xl hover:shadow-white/20 transition-all duration-500 hover:scale-105 active:scale-95 w-full sm:w-auto text-center"
             >
               <span>Shop Collection</span>
 
               <svg
-                className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300"
+                className="w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-2 transition-transform duration-300"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -68,7 +68,7 @@ const Hero = () => {
             {/* Learn More */}
             <Link
               to="/about"
-              className="group font-bold text-white/90 hover:text-white transition-all duration-500 flex items-center gap-3 hover:scale-110"
+              className="group font-bold text-white/90 hover:text-white transition-all duration-500 flex items-center justify-center gap-3 hover:scale-110 py-2 text-base sm:text-lg"
             >
               Learn More
 
@@ -97,58 +97,39 @@ const Hero = () => {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto text-white/80 text-center">
+          <div className="grid grid-cols-3 gap-2 sm:gap-8 max-w-2xl mx-auto text-white/80 text-center">
 
-            <div>
-              <div className="text-3xl md:text-4xl font-bold text-yellow-400 mb-2">
+            <div className="bg-black/30 backdrop-blur-md p-3 sm:p-4 rounded-2xl border border-white/10">
+              <div className="text-xl sm:text-3xl md:text-4xl font-bold text-yellow-400 mb-1">
                 500+
               </div>
 
-              <div className="text-sm uppercase tracking-wider">
+              <div className="text-[10px] sm:text-xs md:text-sm uppercase tracking-wider font-medium">
                 Pieces
               </div>
             </div>
 
-            <div>
-              <div className="text-3xl md:text-4xl font-bold text-yellow-400 mb-2">
+            <div className="bg-black/30 backdrop-blur-md p-3 sm:p-4 rounded-2xl border border-white/10">
+              <div className="text-xl sm:text-3xl md:text-4xl font-bold text-yellow-400 mb-1">
                 10K+
               </div>
 
-              <div className="text-sm uppercase tracking-wider">
-                Happy Customers
+              <div className="text-[10px] sm:text-xs md:text-sm uppercase tracking-wider font-medium">
+                Customers
               </div>
             </div>
 
-            <div>
-              <div className="text-3xl md:text-4xl font-bold text-yellow-400 mb-2">
+            <div className="bg-black/30 backdrop-blur-md p-3 sm:p-4 rounded-2xl border border-white/10">
+              <div className="text-xl sm:text-3xl md:text-4xl font-bold text-yellow-400 mb-1">
                 5★
               </div>
 
-              <div className="text-sm uppercase tracking-wider">
+              <div className="text-[10px] sm:text-xs md:text-sm uppercase tracking-wider font-medium">
                 Rating
               </div>
             </div>
 
           </div>
-
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-
-          <svg
-            className="w-6 h-6 text-white/80"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 9l-7 7-7-7"
-            />
-          </svg>
 
         </div>
 
@@ -158,6 +139,7 @@ const Hero = () => {
 };
 
 export default Hero;
+
 
 
 

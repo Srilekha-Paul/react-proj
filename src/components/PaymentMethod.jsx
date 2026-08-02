@@ -16,11 +16,11 @@ const PaymentMethod = ({ paymentMethod, setPaymentMethod, paymentData, setPaymen
   ];
 
   return (
-    <div className="space-y-6">
-      <h3 className="text-2xl font-semibold mb-4 text-gray-900">Select Payment Method</h3>
+    <div className="space-y-4 sm:space-y-6">
+      <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-gray-900">Select Payment Method</h3>
 
       {/* Tabs */}
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
         {methods.map((method) => {
           const Icon = method.icon;
           const isSelected = paymentMethod === method.id;
@@ -29,18 +29,19 @@ const PaymentMethod = ({ paymentMethod, setPaymentMethod, paymentData, setPaymen
               key={method.id}
               type="button"
               onClick={() => setPaymentMethod(method.id)}
-              className={`flex items-center p-4 border rounded-2xl transition-all duration-200 ${
+              className={`flex items-center p-3.5 sm:p-4 border rounded-2xl transition-all duration-200 text-left ${
                 isSelected
-                  ? "border-yellow-500 bg-yellow-50/50 shadow-md font-semibold text-yellow-700"
+                  ? "border-yellow-500 bg-yellow-50/50 shadow-md font-semibold text-yellow-800"
                   : "border-gray-200 bg-white text-gray-700 hover:border-gray-300"
               }`}
             >
-              <Icon className={`w-6 h-6 mr-3 ${isSelected ? "text-yellow-600" : "text-gray-400"}`} />
-              <span className="text-sm md:text-base">{method.label}</span>
+              <Icon className={`w-5 h-5 sm:w-6 sm:h-6 mr-3 flex-shrink-0 ${isSelected ? "text-yellow-600" : "text-gray-400"}`} />
+              <span className="text-xs sm:text-sm md:text-base font-medium">{method.label}</span>
             </button>
           );
         })}
       </div>
+
 
       {/* Form details per selected payment method */}
       <div className="bg-gray-50 p-6 rounded-2xl border border-gray-200 mt-4">
